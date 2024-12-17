@@ -482,7 +482,8 @@ export function applyRequire<M extends BaseModel>(
     applyLogicalExpression(filter, builder, false, getFullyQualifiedName);
     const joinRelation = createRelationExpression(propertiesSet);
     builder.leftJoinRelated(joinRelation);
-    return builder.select(`${builder.modelClass().tableName}.*`);
+    // return builder.select(`${builder.modelClass().tableName}.*`);
+    return builder;
   }
 
   // If there are a hasMany or manyToMany relations, then create a separate filter query
